@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<html lang="en" style="scroll-behavior: smooth;">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nitheesh Yuvaraj | Portfolio</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          primary: '#6a11cb',
+          secondary: '#2575fc',
+        },
+        animation: {
+          'float': 'float 3s ease-in-out infinite',
+          'gradient-shift': 'gradientShift 15s ease infinite',
+          'modal-slide-in': 'modalSlideIn 0.3s ease',
+          'pulse-slow': 'pulse 3s ease-in-out infinite',
+          'bounce-slow': 'bounce 2s ease-in-out infinite',
+          'spin-slow': 'spin 8s linear infinite',
+        },
+        keyframes: {
+          float: {
+            '0%, 100%': { transform: 'translateY(0px)' },
+            '50%': { transform: 'translateY(-10px)' },
+          },
+          gradientShift: {
+            '0%': { 'background-position': '0% 50%' },
+            '50%': { 'background-position': '100% 50%' },
+            '100%': { 'background-position': '0% 50%' },
+          },
+          modalSlideIn: {
+            '0%': { opacity: '0', transform: 'translateY(-50px) scale(0.9)' },
+            '100%': { opacity: '1', transform: 'translateY(0) scale(1)' },
+          }
+        },
+        backgroundImage: {
+          'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+          'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        }
+      }
+    }
+  }
+</script>
+<style>
+  .shimmer-effect::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(106, 17, 203, 0.1), transparent);
+    transition: left 0.6s ease;
+  }
+  .shimmer-effect:hover::before {
+    left: 100%;
+  }
+  
+  /* Custom Animations for New Home Page */
+  @keyframes blob {
+    0% { transform: translate(0px, 0px) scale(1); }
+    33% { transform: translate(30px, -50px) scale(1.1); }
+    66% { transform: translate(-20px, 20px) scale(0.9); }
+    100% { transform: translate(0px, 0px) scale(1); }
+  }
+  
+  @keyframes gradient {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+  }
+  
+  @keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+  }
+  
+  @keyframes scroll {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(10px); opacity: 0; }
+  }
+  
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  
+  .animate-gradient {
+    animation: gradient 3s ease infinite;
+  }
+  
+  .animate-glitch {
+    animation: glitch 2s infinite;
+  }
+  
+  .animate-scroll {
+    animation: scroll 1.5s infinite;
+  }
+  
+  .bg-300 {
+    background-size: 300% 300%;
+  }
+</style>
+</head>
+
+<body class="font-sans bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950 text-gray-900 min-h-screen relative">
+
+<header id="top" class="min-h-screen flex flex-col justify-center items-center relative bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 text-white overflow-hidden">
+  
+  <!-- Navigation Bar -->
+  <nav class="absolute top-0 w-full bg-white/10 backdrop-blur-md border-b border-white/20 z-50">
+    <div class="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
+      <div class="flex justify-end items-center space-x-4 sm:space-x-6 lg:space-x-8 overflow-x-auto">
+        <a href="#top" class="text-white hover:text-yellow-300 transition-colors duration-300 font-medium flex items-center gap-1 sm:gap-2 whitespace-nowrap text-sm sm:text-base">
+          <span class="text-lg sm:text-xl">🏠</span> <span class="hidden sm:inline">Home</span>
+        </a>
+        <a href="#about" class="text-white hover:text-yellow-300 transition-colors duration-300 font-medium whitespace-nowrap text-sm sm:text-base">About</a>
+        <a href="#activities" class="text-white hover:text-yellow-300 transition-colors duration-300 font-medium whitespace-nowrap text-sm sm:text-base">Activities</a>
+        <a href="#skills" class="text-white hover:text-yellow-300 transition-colors duration-300 font-medium whitespace-nowrap text-sm sm:text-base">Skills</a>
+        <a href="#projects" class="text-white hover:text-yellow-300 transition-colors duration-300 font-medium whitespace-nowrap text-sm sm:text-base">Projects</a>
+        <a href="#contact" class="text-white hover:text-yellow-300 transition-colors duration-300 font-medium whitespace-nowrap text-sm sm:text-base">Contact</a>
+        <a href="#get-in-touch" class="text-white hover:text-yellow-300 transition-colors duration-300 font-medium whitespace-nowrap text-sm sm:text-base">Get In Touch</a>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Main Content -->
+  <div class="relative z-10 text-center px-4 sm:px-6 max-w-6xl mx-auto">
+    <!-- Profile Image with Enhanced Styling -->
+    <div class="mb-4 sm:mb-8 relative -mt-8 sm:-mt-12">
+      <div class="relative inline-block">
+        <!-- Animated Glow Rings -->
+        <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 rounded-full blur-3xl opacity-40 animate-pulse"></div>
+        <div class="absolute inset-0 bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-400 rounded-full blur-2xl opacity-30 animate-spin-slow"></div>
+        
+        <!-- Rotating Border Ring -->
+        <div class="absolute inset-0 rounded-full border-4 border-transparent bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 animate-spin-slow" style="mask: radial-gradient(farthest-side, transparent calc(100% - 4px), black calc(100% - 3px)); -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 4px), black calc(100% - 3px));"></div>
+        
+        <!-- Main Profile Image -->
+        <img src="nitheesh.png" alt="Nitheesh Yuvaraj" class="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-64 lg:h-64 rounded-full border-4 border-white shadow-2xl object-cover transform hover:scale-110 transition-all duration-700 hover:rotate-6 hover:shadow-3xl" onerror="this.src='https://via.placeholder.com/256x256/6a11cb/ffffff?text=NITHEESH'">
+        
+        <!-- Floating Status Badge -->
+        <div class="absolute -bottom-2 -right-2 w-8 h-8 sm:w-10 sm:h-12 bg-gradient-to-r from-green-400 to-emerald-400 rounded-full flex items-center justify-center text-white text-sm sm:text-xl animate-bounce shadow-lg">
+          <span class="animate-pulse">✨</span>
+        </div>
+        
+              </div>
+    </div>
+    
+    <!-- Name with Enhanced Effects -->
+    <div class="mb-4 sm:mb-6">
+      <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl font-black mb-2 sm:mb-4 relative">
+        <span class="relative z-10 bg-gradient-to-r from-white via-yellow-200 via-pink-200 to-white bg-clip-text text-transparent animate-gradient bg-300 drop-shadow-2xl">NITHEESH YUVARAJ</span>
+        <span class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent opacity-30 animate-glitch">NITHEESH YUVARAJ</span>
+        <span class="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-yellow-400 via-red-400 to-orange-400 bg-clip-text text-transparent opacity-20 animate-glitch" style="animation-delay: 0.5s;">NITHEESH YUVARAJ</span>
+      </h1>
+      <!-- Subtitle underline animation -->
+      <div class="relative h-1 w-24 sm:w-32 md:w-40 lg:w-48 mx-auto overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 animate-gradient bg-300"></div>
+      </div>
+    </div>
+    
+    <!-- Subtitle with Enhanced Typewriter Effect -->
+    <div class="mb-8 sm:mb-12">
+      <p class="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-light text-white/90 animate-float">
+        <span class="inline-block transform hover:scale-110 transition-transform duration-300">Student</span>
+        <span class="mx-2 sm:mx-3 animate-pulse text-yellow-400">|</span>
+        <span class="inline-block transform hover:scale-110 transition-transform duration-300">Web Developer</span>
+        <span class="mx-2 sm:mx-3 animate-pulse text-pink-400">|</span>
+        <span class="inline-block transform hover:scale-110 transition-transform duration-300">Mobile Developer</span>
+      </p>
+    </div>
+    
+    <!-- Enhanced Call to Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mb-8 sm:mb-16">
+      <a href="#projects" class="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-400 via-pink-400 to-purple-400 text-gray-900 font-bold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-2xl sm:hover:shadow-3xl hover:rotate-1 text-sm sm:text-base">
+        <span class="relative z-10 flex items-center gap-1 sm:gap-2">
+          <span class="text-lg sm:text-xl">🚀</span> View Projects
+        </span>
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-400 to-yellow-400 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+      </a>
+      <a href="#contact" class="group relative px-6 sm:px-8 py-3 sm:py-4 bg-white/20 backdrop-blur-md text-white font-bold rounded-full border-2 border-white/30 overflow-hidden transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:bg-white/30 hover:rotate-1 text-sm sm:text-base">
+        <span class="relative z-10 flex items-center gap-1 sm:gap-2">
+          <span class="text-lg sm:text-xl">💬</span> Get In Touch
+        </span>
+        <div class="absolute inset-0 bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      </a>
+    </div>
+    
+      </div>
+  
+  <!-- Scroll Indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
+    <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+      <div class="w-1 h-3 bg-white/50 rounded-full mt-2 animate-scroll"></div>
+    </div>
+  </div>
+</header>
+
+<section id="about" class="min-h-screen lg:min-h-screen xl:min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950 text-white relative overflow-hidden">
+  
+  <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20 min-h-screen flex items-center">
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-6">
+        <span class="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">About Me</span>
+      </h2>
+      <div class="w-24 sm:w-32 h-1 bg-gradient-to-r from-cyan-400 to-pink-400 mx-auto rounded-full"></div>
+    </div>
+    
+    <div class="grid lg:grid-cols-1 gap-8 sm:gap-12 items-center max-w-4xl lg:max-w-6xl mx-auto w-full">
+      <!-- Content Only - No Profile Image -->
+      <div class="space-y-6 sm:space-y-8">
+        <div class="bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/20 transform hover:scale-105 transition-all duration-300">
+          <h3 class="text-xl sm:text-2xl font-bold mb-4 text-cyan-400">🚀 Passion</h3>
+          <p class="text-base sm:text-lg leading-relaxed text-white/90">
+            Passionate about creating innovative web solutions and AI-driven applications with cutting-edge technology.
+          </p>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/20 transform hover:scale-105 transition-all duration-300">
+          <h3 class="text-xl sm:text-2xl font-bold mb-4 text-purple-400">🎓 Education</h3>
+          <p class="text-base sm:text-lg leading-relaxed text-white/90">
+            Currently pursuing my <span class="font-bold text-purple-300">MSc</span> at <span class="font-bold text-purple-300">Kongu Engineering College</span>
+          </p>
+        </div>
+        
+        <div class="bg-white/10 backdrop-blur-md p-6 sm:p-8 rounded-2xl border border-white/20 transform hover:scale-105 transition-all duration-300">
+          <h3 class="text-xl sm:text-2xl font-bold mb-4 text-pink-400">💡 Expertise</h3>
+          <p class="text-base sm:text-lg leading-relaxed text-white/90">
+            Combining technical expertise with creative problem-solving to build impactful projects.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="skills" class="py-12 sm:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950 text-white relative overflow-hidden">
+  
+  <div class="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-12 sm:mb-16">
+      <h2 class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-black mb-6">
+        <span class="bg-gradient-to-r from-amber-500 via-orange-500 to-red-500 bg-clip-text text-transparent">Skills</span>
+      </h2>
+      <div class="w-24 sm:w-32 h-1 bg-gradient-to-r from-amber-500 to-red-500 mx-auto rounded-full"></div>
+    </div>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 sm:gap-6 max-w-7xl mx-auto">
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-amber-400 to-orange-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+        <div class="relative bg-gray-800/80 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-gray-700 text-center transform hover:scale-105 transition-all duration-300 shadow-lg">
+          <div class="text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 group-hover:animate-bounce">💻</div>
+          <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-cyan-400">C Programming</h3>
+          <div class="mb-2 sm:mb-3">
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-gradient-to-r from-cyan-400 to-blue-400 h-2 rounded-full" style="width: 90%"></div>
+            </div>
+          </div>
+          <p class="text-gray-300 font-medium text-xs sm:text-sm">Expert Level</p>
+        </div>
+      </div>
+      
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-400 to-red-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+        <div class="relative bg-gray-800/80 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-gray-700 text-center transform hover:scale-105 transition-all duration-300 shadow-lg">
+          <div class="text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 group-hover:animate-bounce">⚙️</div>
+          <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-cyan-400">C++ Programming</h3>
+          <div class="mb-2 sm:mb-3">
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-gradient-to-r from-cyan-400 to-blue-400 h-2 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+          <p class="text-gray-300 font-medium text-xs sm:text-sm">Advanced Level</p>
+        </div>
+      </div>
+      
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-red-400 to-pink-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+        <div class="relative bg-gray-800/80 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-gray-700 text-center transform hover:scale-105 transition-all duration-300 shadow-lg">
+          <div class="text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 group-hover:animate-bounce">🌐</div>
+          <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-cyan-400">Web Development</h3>
+          <div class="mb-2 sm:mb-3">
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-gradient-to-r from-cyan-400 to-blue-400 h-2 rounded-full" style="width: 95%"></div>
+            </div>
+          </div>
+          <p class="text-gray-300 font-medium text-xs sm:text-sm">Professional Level</p>
+        </div>
+      </div>
+      
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+        <div class="relative bg-gray-800/80 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-gray-700 text-center transform hover:scale-105 transition-all duration-300 shadow-lg">
+          <div class="text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 group-hover:animate-bounce">🎬</div>
+          <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-cyan-400">Video Editing</h3>
+          <div class="mb-2 sm:mb-3">
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-gradient-to-r from-cyan-400 to-blue-400 h-2 rounded-full" style="width: 80%"></div>
+            </div>
+          </div>
+          <p class="text-gray-300 font-medium text-xs sm:text-sm">Canva Expert</p>
+        </div>
+      </div>
+      
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-2xl blur-xl opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+        <div class="relative bg-gray-800/80 backdrop-blur-md p-4 sm:p-6 rounded-2xl border border-gray-700 text-center transform hover:scale-105 transition-all duration-300 shadow-lg">
+          <div class="text-3xl sm:text-4xl md:text-5xl mb-3 sm:mb-4 group-hover:animate-bounce">🎨</div>
+          <h3 class="text-lg sm:text-xl font-bold mb-2 sm:mb-3 text-cyan-400">Poster Designing</h3>
+          <div class="mb-2 sm:mb-3">
+            <div class="w-full bg-gray-700 rounded-full h-2">
+              <div class="bg-gradient-to-r from-cyan-400 to-blue-400 h-2 rounded-full" style="width: 85%"></div>
+            </div>
+          </div>
+          <p class="text-gray-300 font-medium text-xs sm:text-sm">Canva Expert</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="activities" class="py-12 sm:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950 text-white relative overflow-hidden">
+  
+  <div class="relative z-10 container mx-auto px-6 py-20">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl sm:text-6xl lg:text-7xl font-black mb-6">
+        <span class="bg-gradient-to-r from-emerald-400 via-teal-400 to-cyan-400 bg-clip-text text-transparent">Activities</span>
+      </h2>
+      <div class="w-32 h-1 bg-gradient-to-r from-emerald-400 to-cyan-400 mx-auto rounded-full"></div>
+      <p class="text-xl text-gray-300 mt-6">Workshops, Hackathons & Professional Development</p>
+    </div>
+    
+    <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+      <!-- Union Budget Workshop -->
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-emerald-500 to-teal-500 rounded-3xl blur-2xl opacity-0 group-hover:opacity-60 transition-opacity duration-300"></div>
+        <div class="relative bg-gray-800/50 backdrop-blur-md p-10 rounded-3xl border border-gray-700 transform hover:scale-105 transition-all duration-500">
+          <div class="flex items-center mb-6">
+            <div class="text-6xl mr-6 group-hover:animate-bounce">📊</div>
+            <div>
+              <h3 class="text-3xl font-bold text-emerald-400 mb-2">Union Budget 2026</h3>
+              <p class="text-gray-400 font-medium">Workshop Participant - MBA Department</p>
+              <p class="text-gray-500 text-sm mt-1">Kongu Engineering College</p>
+            </div>
+          </div>
+          
+          <div class="space-y-4 mb-6">
+            <div class="flex items-start">
+              <span class="text-emerald-400 mr-3 text-xl">📈</span>
+              <p class="text-gray-300 leading-relaxed">
+                Attended comprehensive workshop on <span class="font-bold text-emerald-300">"Decoding Union Budget 2026"</span> organized by the MBA Department at Kongu Engineering College, focusing on economic policies and financial implications.
+              </p>
+            </div>
+            <div class="flex items-start">
+              <span class="text-teal-400 mr-3 text-xl">🎯</span>
+              <p class="text-gray-300 leading-relaxed">
+                Gained insights into fiscal policies, tax reforms, and budget allocations impacting various sectors of the economy.
+              </p>
+            </div>
+            <div class="flex items-start">
+              <span class="text-cyan-400 mr-3 text-xl">💡</span>
+              <p class="text-gray-300 leading-relaxed">
+                Developed understanding of economic trends and their influence on business and technology sectors.
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-emerald-500/20 text-emerald-300 px-4 py-2 rounded-full text-sm font-medium border border-emerald-500/30">Economic Analysis</span>
+            <span class="bg-teal-500/20 text-teal-300 px-4 py-2 rounded-full text-sm font-medium border border-teal-500/30">Policy Research</span>
+            <span class="bg-cyan-500/20 text-cyan-300 px-4 py-2 rounded-full text-sm font-medium border border-cyan-500/30">Financial Planning</span>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Hacksagon Hackathon -->
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-500 rounded-3xl blur-2xl opacity-0 group-hover:opacity-60 transition-opacity duration-300"></div>
+        <div class="relative bg-gray-800/50 backdrop-blur-md p-10 rounded-3xl border border-gray-700 transform hover:scale-105 transition-all duration-500">
+          <div class="flex items-center mb-6">
+            <div class="text-6xl mr-6 group-hover:animate-bounce">💻</div>
+            <div>
+              <h3 class="text-3xl font-bold text-orange-400 mb-2">Hacksagon 2K26</h3>
+              <p class="text-gray-400 font-medium">Hackathon Participant</p>
+              <p class="text-gray-500 text-sm mt-1">Freelancer Club - Kongu Engineering College</p>
+            </div>
+          </div>
+          
+          <div class="space-y-4 mb-6">
+            <div class="flex items-start">
+              <span class="text-orange-400 mr-3 text-xl">🏆</span>
+              <p class="text-gray-300 leading-relaxed">
+                Active participant in <span class="font-bold text-orange-300">Hacksagon 2K26</span>, a prestigious hackathon organized by the Freelancer Club at Kongu Engineering College.
+              </p>
+            </div>
+            <div class="flex items-start">
+              <span class="text-red-400 mr-3 text-xl">⚡</span>
+              <p class="text-gray-300 leading-relaxed">
+                Collaborated with team members to develop innovative solutions under time constraints, demonstrating problem-solving skills.
+              </p>
+            </div>
+            <div class="flex items-start">
+              <span class="text-yellow-400 mr-3 text-xl">🚀</span>
+              <p class="text-gray-300 leading-relaxed">
+                Gained hands-on experience in rapid prototyping, teamwork, and cutting-edge technology implementation.
+              </p>
+            </div>
+          </div>
+          
+          <div class="flex flex-wrap gap-3">
+            <span class="bg-orange-500/20 text-orange-300 px-4 py-2 rounded-full text-sm font-medium border border-orange-500/30">Team Collaboration</span>
+            <span class="bg-red-500/20 text-red-300 px-4 py-2 rounded-full text-sm font-medium border border-red-500/30">Rapid Development</span>
+            <span class="bg-yellow-500/20 text-yellow-300 px-4 py-2 rounded-full text-sm font-medium border border-yellow-500/30">Innovation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Additional Activities Summary -->
+    <div class="mt-16 text-center">
+      <div class="bg-gray-800/30 backdrop-blur-md p-8 rounded-3xl border border-gray-700 max-w-4xl mx-auto">
+        <h4 class="text-2xl font-bold mb-6 text-cyan-400">Professional Development</h4>
+        <p class="text-lg text-gray-300 leading-relaxed mb-6">
+          Actively engaged in workshops and competitive events to enhance technical skills, gain industry insights, and build professional networks. These activities complement academic learning with practical experience and real-world problem-solving.
+        </p>
+        <div class="flex justify-center gap-8 flex-wrap">
+          <div class="text-center">
+            <div class="text-4xl font-bold text-emerald-400 mb-2">2+</div>
+            <div class="text-gray-400">Workshops</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-orange-400 mb-2">5+</div>
+            <div class="text-gray-400">Hackathons</div>
+          </div>
+          <div class="text-center">
+            <div class="text-4xl font-bold text-cyan-400 mb-2">10+</div>
+            <div class="text-gray-400">Events</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950 text-white relative overflow-hidden">
+  
+  <div class="relative z-10 container mx-auto px-6 py-20">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl sm:text-6xl lg:text-7xl font-black mb-6">
+        <span class="bg-gradient-to-r from-yellow-400 via-pink-400 to-red-400 bg-clip-text text-transparent">Projects</span>
+      </h2>
+      <div class="w-32 h-1 bg-gradient-to-r from-yellow-400 to-red-400 mx-auto rounded-full"></div>
+    </div>
+    
+    <div class="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-red-500 to-orange-500 rounded-3xl blur-2xl opacity-0 group-hover:opacity-60 transition-opacity duration-300"></div>
+        <div class="relative bg-gray-900/50 backdrop-blur-md rounded-3xl overflow-hidden border border-gray-800 transform hover:scale-105 transition-all duration-500">
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop&crop=center&auto=format" alt="AI Violence Detection" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+            <div class="absolute top-4 right-4 bg-red-500 text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse">AI/ML</div>
+          </div>
+          <div class="p-8">
+            <div class="text-5xl mb-4 group-hover:animate-bounce">🤖</div>
+            <h3 class="text-3xl font-bold mb-4 text-yellow-400">AI Violence Detection</h3>
+            <p class="text-lg text-gray-300 mb-6 leading-relaxed">AI detects violence in CCTV surveillance systems using advanced computer vision and machine learning algorithms for real-time threat detection and public safety monitoring.</p>
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-red-500/20 text-red-300 px-4 py-2 rounded-full text-sm font-medium border border-red-500/30">Computer Vision</span>
+              <span class="bg-orange-500/20 text-orange-300 px-4 py-2 rounded-full text-sm font-medium border border-orange-500/30">Deep Learning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="group relative">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-2xl opacity-0 group-hover:opacity-60 transition-opacity duration-300"></div>
+        <div class="relative bg-gray-900/50 backdrop-blur-md rounded-3xl overflow-hidden border border-gray-800 transform hover:scale-105 transition-all duration-500">
+          <div class="relative h-64 overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=400&fit=crop&crop=center&auto=format" alt="Smart Resume Screening" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+            <div class="absolute inset-0 bg-gradient-to-t from-gray-900 to-transparent"></div>
+            <div class="absolute top-4 right-4 bg-blue-500 text-white px-4 py-2 rounded-full text-sm font-bold animate-pulse">NLP</div>
+          </div>
+          <div class="p-8">
+            <div class="text-5xl mb-4 group-hover:animate-bounce">📄</div>
+            <h3 class="text-3xl font-bold mb-4 text-cyan-400">Smart Resume Screening</h3>
+            <p class="text-lg text-gray-300 mb-6 leading-relaxed">Intelligent resume screening and job recommendation system using AI and machine learning to match candidates with perfect job opportunities based on skills and experience.</p>
+            <div class="flex flex-wrap gap-3">
+              <span class="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full text-sm font-medium border border-blue-500/30">NLP</span>
+              <span class="bg-cyan-500/20 text-cyan-300 px-4 py-2 rounded-full text-sm font-medium border border-cyan-500/30">Machine Learning</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="get-in-touch" class="min-h-screen bg-gradient-to-br from-indigo-950 via-purple-950 to-pink-950 text-white relative overflow-hidden">
+  
+  <div class="relative z-10 container mx-auto px-6 py-20">
+    <div class="text-center mb-16">
+      <h2 class="text-5xl sm:text-6xl lg:text-7xl font-black mb-6">
+        <span class="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">Get In Touch</span>
+      </h2>
+      <div class="w-32 h-1 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 mx-auto rounded-full shadow-lg"></div>
+      <p class="text-xl sm:text-2xl text-white/95 mt-6 drop-shadow-lg">Let's create something amazing together!</p>
+    </div>
+    
+    <!-- Contact Form -->
+    <div class="max-w-2xl mx-auto px-4 sm:px-0">
+      <div class="bg-gradient-to-br from-gray-900/90 via-purple-900/80 to-gray-900/90 backdrop-blur-xl p-6 sm:p-8 rounded-3xl border-2 border-gradient-to-r from-purple-500/40 to-pink-500/40 shadow-2xl relative overflow-hidden">
+        <!-- Form Glow Effect -->
+        <div class="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-pink-500/10 to-purple-500/10 rounded-3xl"></div>
+        
+        <form id="contactForm" class="space-y-6 relative z-10">
+          <!-- Name Field -->
+          <div class="group">
+            <label for="name" class="block text-white font-bold mb-2 text-base sm:text-lg drop-shadow-md">Your Name</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+                <span class="text-cyan-400 text-lg sm:text-xl drop-shadow-lg">👤</span>
+              </div>
+              <input 
+                type="text" 
+                id="name" 
+                name="name" 
+                required
+                class="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-gray-900/70 border-2 border-purple-400/50 rounded-xl sm:rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-cyan-400 focus:border-cyan-400 transition-all duration-300 hover:bg-gray-900/80 hover:border-purple-400/70 text-sm sm:text-base shadow-lg"
+                placeholder="Enter your name"
+              >
+            </div>
+          </div>
+          
+          <!-- Email Field -->
+          <div class="group">
+            <label for="email" class="block text-white font-bold mb-2 text-base sm:text-lg drop-shadow-md">Email Address</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 left-0 pl-3 sm:pl-4 flex items-center pointer-events-none">
+                <span class="text-purple-400 text-lg sm:text-xl drop-shadow-lg">📧</span>
+              </div>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required
+                class="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-gray-900/70 border-2 border-purple-400/50 rounded-xl sm:rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-purple-400 focus:border-purple-400 transition-all duration-300 hover:bg-gray-900/80 hover:border-purple-400/70 text-sm sm:text-base shadow-lg"
+                placeholder="your.email@example.com"
+              >
+            </div>
+          </div>
+          
+          <!-- Message Field -->
+          <div class="group">
+            <label for="message" class="block text-white font-bold mb-2 text-base sm:text-lg drop-shadow-md">Your Message</label>
+            <div class="relative">
+              <div class="absolute top-3 sm:top-4 left-0 pl-3 sm:pl-4 pointer-events-none">
+                <span class="text-pink-400 text-lg sm:text-xl drop-shadow-lg">💬</span>
+              </div>
+              <textarea 
+                id="message" 
+                name="message" 
+                rows="4 sm:rows-5" 
+                required
+                class="w-full pl-10 sm:pl-12 pr-3 sm:pr-4 py-3 sm:py-4 bg-gray-900/70 border-2 border-purple-400/50 rounded-xl sm:rounded-2xl text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:border-pink-400 transition-all duration-300 hover:bg-gray-900/80 hover:border-purple-400/70 resize-none text-sm sm:text-base shadow-lg"
+                placeholder="Tell me about your project or just say hello..."
+              ></textarea>
+            </div>
+          </div>
+          
+          <!-- Submit Button -->
+          <div class="text-center">
+            <button 
+              type="submit" 
+              class="group relative px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-cyan-500 via-purple-500 to-pink-500 text-white font-bold rounded-full overflow-hidden transition-all duration-300 hover:scale-105 sm:hover:scale-110 hover:shadow-2xl hover:rotate-1 text-sm sm:text-base shadow-xl"
+            >
+              <span class="relative z-10 flex items-center gap-1 sm:gap-2">
+                <span>Send Message</span>
+                <span class="text-lg sm:text-xl group-hover:animate-bounce">🚀</span>
+              </span>
+              <div class="absolute inset-0 bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              <div class="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-30 transition-opacity duration-300"></div>
+            </button>
+          </div>
+        </form>
+        
+        <!-- Success Message (Hidden by default) -->
+        <div id="successMessage" class="hidden mt-6 p-4 bg-gradient-to-r from-green-500/30 to-emerald-500/30 border-2 border-green-400/60 rounded-2xl text-center backdrop-blur-sm relative z-10">
+          <p class="text-green-300 font-bold text-lg drop-shadow-md">✅ Thank you for your message! I'll get back to you soon.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+  <div class="container mx-auto px-6 text-center">
+    <div class="mb-8">
+      <h3 class="text-2xl font-bold mb-4 bg-gradient-to-r from-violet-400 to-fuchsia-400 bg-clip-text text-transparent">Nitheesh Yuvaraj</h3>
+      <p class="text-gray-400">Creating innovative solutions with passion and expertise</p>
+    </div>
+    
+    <div class="flex justify-center gap-6 mb-8">
+      <a href="https://github.com/nitheeshyuvaraj" target="_blank" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-gray-900 hover:text-white transition-all duration-300 hover:scale-110">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+        </svg>
+      </a>
+      <a href="mailto:nitheesh.yuvaraj@example.com" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-red-600 hover:text-white transition-all duration-300 hover:scale-110">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+        </svg>
+      </a>
+      <a href="https://linkedin.com/in/nitheesh-yuvaraj" target="_blank" class="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center text-gray-400 hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-110">
+        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+        </svg>
+      </a>
+    </div>
+    
+    <div class="text-gray-500 text-sm">
+      <p>© 2024 Nitheesh Yuvaraj. All rights reserved.</p>
+      <p class="mt-2">Built with 💜 and cutting-edge technology</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+function navigateToProject(projectId) {
+  const projects = {
+    'ai-violence-detection': {
+      title: 'AI Violence Detection in CCTV',
+      description: 'AI detects violence in CCTV surveillance systems using advanced computer vision and machine learning algorithms for real-time threat detection and public safety monitoring.',
+      technologies: ['Computer Vision', 'Deep Learning', 'Python', 'OpenCV'],
+      features: ['Real-time threat detection', 'Public safety monitoring', 'Automated alerts', 'High accuracy detection']
+    },
+    'smart-resume-screening': {
+      title: 'Smart Resume Screening and Job Recommendation',
+      description: 'Intelligent resume screening and job recommendation system using AI and machine learning to match candidates with perfect job opportunities based on skills and experience.',
+      technologies: ['Natural Language Processing', 'Machine Learning', 'Python', 'Data Analysis'],
+      features: ['Automated resume parsing', 'Skill-based matching', 'Job recommendations', 'Candidate ranking']
+    }
+  };
+
+  const project = projects[projectId];
+  if (project) {
+    showProjectDetails(project);
+  }
+}
+
+function showSkillDetails(skillId) {
+  const skills = {
+    'c-programming': {
+      title: 'C Programming',
+      icon: '💻',
+      description: 'Expert-level C programming with comprehensive understanding of low-level memory management, complex data structures, algorithm optimization, and system-level programming. Proficient in developing efficient, high-performance applications with minimal resource usage.',
+      experience: '2 years',
+      projects: ['Operating System Components', 'Real-time Systems', 'Embedded Applications', 'Algorithm Libraries', 'System Utilities'],
+      skills: ['Advanced Pointers', 'Memory Management', 'Data Structures & Algorithms', 'File I/O Operations', 'Multi-threading', 'System Calls', 'Dynamic Memory Allocation'],
+      level: 'Expert',
+      achievements: ['Optimized algorithms by 40%', 'Reduced memory usage by 30%', 'Built scalable system components']
+    },
+    'cpp-programming': {
+      title: 'C++ Programming',
+      icon: '⚙️',
+      description: 'Advanced C++ programming with deep expertise in object-oriented design patterns, modern C++ features, template metaprogramming, and performance optimization. Skilled in developing complex software architectures and maintainable codebases.',
+      experience: '2 years',
+      projects: ['Game Engine Components', 'Desktop Applications', 'API Development', 'System Software', 'Real-time Simulations'],
+      skills: ['OOP Design Patterns', 'STL & Containers', 'Template Programming', 'Smart Pointers', 'RAII Principles', 'Modern C++ Standards', 'Performance Optimization'],
+      level: 'Expert',
+      achievements: ['Implemented design patterns', 'Improved code reusability', 'Built modular architectures']
+    },
+    'web-development': {
+      title: 'Web Development',
+      icon: '🌐',
+      description: 'Full-stack web development expertise with modern JavaScript frameworks, responsive design principles, API integration, and cloud deployment. Proficient in building scalable, performant web applications with excellent user experience.',
+      experience: '2 years',
+      projects: ['E-commerce Platforms', 'RESTful APIs', 'Real-time Chat Applications', 'Progressive Web Apps', 'Dashboard Systems', 'Mobile-responsive Websites'],
+      skills: ['HTML5 & Semantic Markup', 'CSS3 & Animations', 'JavaScript ES6+', 'React & Redux', 'Node.js & Express', 'MongoDB & SQL', 'Tailwind CSS', 'Git & Version Control'],
+      level: 'Professional',
+      achievements: ['Built responsive designs', 'Implemented real-time features', 'Optimized performance', 'Deployed to cloud platforms']
+    }
+  };
+
+  const skill = skills[skillId];
+  if (skill) {
+    showSkillModal(skill);
+  }
+}
+
+function showSkillModal(skill) {
+  const modal = document.createElement('div');
+  modal.className = 'fixed inset-0 bg-black/80 flex justify-center items-center z-50 backdrop-blur-sm';
+  
+  const content = document.createElement('div');
+  content.className = 'bg-white p-8 rounded-2xl max-w-4xl w-11/12 max-h-[80vh] overflow-y-auto text-gray-900 relative animate-modal-slide-in';
+  
+  content.innerHTML = `
+    <button onclick="this.parentElement.parentElement.remove()" class="absolute top-4 right-4 bg-gray-100 border-0 text-gray-600 text-2xl w-10 h-10 rounded-full cursor-pointer transition-all duration-300 hover:bg-gray-200">×</button>
+    
+    <div class="text-center mb-6">
+      <div class="text-6xl mb-4">${skill.icon}</div>
+      <h2 class="text-3xl font-bold text-primary mb-2">${skill.title}</h2>
+      <div class="inline-block bg-gradient-to-r from-primary to-secondary text-white px-4 py-2 rounded-full text-sm font-semibold mb-4">
+        ${skill.level} Level
+      </div>
+    </div>
+    
+    <div class="mb-6">
+      <h3 class="text-xl font-semibold mb-3 text-gray-800">About</h3>
+      <p class="text-gray-600 leading-relaxed">${skill.description}</p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+      <div>
+        <h3 class="text-lg font-semibold mb-3 text-gray-800">Experience</h3>
+        <p class="text-gray-600 font-medium">${skill.experience}</p>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-3 text-gray-800">Key Skills</h3>
+        <div class="flex flex-wrap gap-2">
+          ${skill.skills.map(s => `<span class="bg-purple-100 text-purple-700 px-3 py-1 rounded-full text-xs font-medium">${s}</span>`).join('')}
+        </div>
+      </div>
+      <div>
+        <h3 class="text-lg font-semibold mb-3 text-gray-800">Achievements</h3>
+        <div class="space-y-2">
+          ${skill.achievements.map(a => `<div class="flex items-start"><span class="text-green-500 mr-2">✓</span><span class="text-sm text-gray-600">${a}</span></div>`).join('')}
+        </div>
+      </div>
+    </div>
+    
+    <div class="mb-6">
+      <h3 class="text-lg font-semibold mb-3 text-gray-800">Related Projects</h3>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+        ${skill.projects.map(p => `<div class="bg-gradient-to-r from-purple-50 to-blue-50 p-3 rounded-lg text-center text-sm text-gray-700 border border-purple-100 hover:border-primary transition-colors cursor-pointer hover:shadow-md">${p}</div>`).join('')}
+      </div>
+    </div>
+  `;
+
+  modal.appendChild(content);
+  document.body.appendChild(modal);
+
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.remove();
+    }
+  });
+}
+
+function showProjectDetails(project) {
+  const modal = document.createElement('div');
+  modal.className = 'fixed inset-0 bg-black/80 flex justify-center items-center z-50 backdrop-blur-sm';
+  
+  const content = document.createElement('div');
+  content.className = 'bg-gradient-to-br from-purple-600/95 to-blue-600/95 p-12 rounded-2xl max-w-2xl w-11/12 max-h-[80vh] overflow-y-auto text-white relative animate-modal-slide-in';
+  
+  content.innerHTML = `
+    <button onclick="this.parentElement.parentElement.remove()" class="absolute top-4 right-4 bg-white/20 border-0 text-white text-2xl w-10 h-10 rounded-full cursor-pointer transition-all duration-300 hover:bg-white/30">×</button>
+    
+    <h2 class="text-3xl font-bold mb-6 text-center">${project.title}</h2>
+    <p class="mb-8 leading-relaxed text-lg">${project.description}</p>
+    
+    <h3 class="text-xl font-semibold mb-4 text-yellow-300">Technologies Used:</h3>
+    <div class="flex flex-wrap gap-2 mb-8">
+      ${project.technologies.map(tech => `<span class="bg-white/20 px-4 py-2 rounded-2xl">${tech}</span>`).join('')}
+    </div>
+    
+    <h3 class="text-xl font-semibold mb-4 text-yellow-300">Key Features:</h3>
+    <ul class="list-none p-0">
+      ${project.features.map(feature => `<li class="mb-2 pl-6 relative">✨ ${feature}</li>`).join('')}
+    </ul>
+  `;
+
+  modal.appendChild(content);
+  document.body.appendChild(modal);
+
+  modal.addEventListener('click', function(e) {
+    if (e.target === modal) {
+      modal.remove();
+    }
+  });
+}
+
+document.querySelectorAll('nav a').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+
+// Contact Form Handling
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  // Get form values
+  const name = document.getElementById('name').value;
+  const email = document.getElementById('email').value;
+  const message = document.getElementById('message').value;
+  
+  // Log the form data (in a real application, you would send this to a server)
+  console.log('Contact Form Submitted:', { name, email, message });
+  
+  // Show success message
+  const successMessage = document.getElementById('successMessage');
+  successMessage.classList.remove('hidden');
+  
+  // Reset form
+  this.reset();
+  
+  // Hide success message after 5 seconds
+  setTimeout(() => {
+    successMessage.classList.add('hidden');
+  }, 5000);
+  
+  // Optional: You could also show an alert for demo purposes
+  // alert(`Thank you ${name}! Your message has been received.`);
+});
+
+// Maintain scroll position on page refresh
+window.addEventListener('beforeunload', function() {
+  sessionStorage.setItem('scrollPosition', window.scrollY);
+});
+
+window.addEventListener('load', function() {
+  const scrollPosition = sessionStorage.getItem('scrollPosition');
+  if (scrollPosition !== null) {
+    window.scrollTo(0, parseInt(scrollPosition));
+    sessionStorage.removeItem('scrollPosition');
+  }
+});
+</script>
+
+</body>
+</html>
